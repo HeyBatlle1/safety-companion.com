@@ -1,274 +1,158 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safety Companion README</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
-            width: 1280px;
-            height: 640px;
-            display: flex;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-            height: 100%;
-        }
-
-        .left-section {
-            flex: 1;
-            padding: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .right-section {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-        }
-
-        .header {
-            margin-bottom: 30px;
-        }
-
-        .logo {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(45deg, #60a5fa, #93c5fd);
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            margin-bottom: 15px;
-        }
-
-        .title {
-            font-size: 48px;
-            font-weight: 700;
-            color: #60a5fa;
-            margin: 0;
-            line-height: 1.1;
-        }
-
-        .subtitle {
-            font-size: 18px;
-            color: #94a3b8;
-            margin: 8px 0 0 0;
-            font-weight: 400;
-        }
-
-        .description {
-            font-size: 20px;
-            color: #e2e8f0;
-            margin: 30px 0;
-            line-height: 1.5;
-            max-width: 500px;
-        }
-
-        .tech-stack {
-            margin-bottom: 30px;
-        }
-
-        .tech-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: #cbd5e1;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .tech-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .tech-item {
-            background: rgba(96, 165, 250, 0.2);
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            color: #bfdbfe;
-            font-weight: 500;
-        }
-
-        .built-with {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 30px;
-        }
-
-        .bolt-badge {
-            background: linear-gradient(45deg, #f59e0b, #f97316);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .github-link {
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .visual-element {
-            width: 300px;
-            height: 400px;
-            position: relative;
-        }
-
-        .grid-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                linear-gradient(rgba(96, 165, 250, 0.2) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(96, 165, 250, 0.2) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        .tower {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 350px;
-            background: linear-gradient(45deg, rgba(96, 165, 250, 0.3), rgba(147, 197, 253, 0.3));
-            clip-path: polygon(50% 0%, 20% 100%, 80% 100%);
-            border: 2px solid rgba(96, 165, 250, 0.5);
-        }
-
-        .glow {
-            position: absolute;
-            top: -100px;
-            left: -100px;
-            right: -100px;
-            bottom: -100px;
-            background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .features {
-            margin-top: 20px;
-        }
-
-        .feature-list {
-            font-size: 14px;
-            color: #cbd5e1;
-            line-height: 1.8;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 8px;
-        }
-
-        .check-icon {
-            width: 16px;
-            height: 16px;
-            background: #10b981;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="left-section">
-            <div class="header">
-                <div class="logo"></div>
-                <h1 class="title">Safety Companion</h1>
-                <p class="subtitle">Modern Safety Management Platform</p>
-            </div>
-            
-            <p class="description">
-                A comprehensive web application designed to provide OSHA-compliant safety assistance, real-time monitoring, and location-based services to keep workers safe and informed.
-            </p>
-
-            <div class="tech-stack">
-                <div class="tech-title">Tech Stack</div>
-                <div class="tech-items">
-                    <span class="tech-item">React 18</span>
-                    <span class="tech-item">TypeScript</span>
-                    <span class="tech-item">Vite</span>
-                    <span class="tech-item">Tailwind CSS</span>
-                    <span class="tech-item">Firebase</span>
-                    <span class="tech-item">Google Maps</span>
-                    <span class="tech-item">AI Integration</span>
-                    <span class="tech-item">Framer Motion</span>
-                </div>
-            </div>
-
-            <div class="features">
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <div class="check-icon">✓</div>
-                        <span>OSHA Compliance & Safety Guidelines</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="check-icon">✓</div>
-                        <span>Interactive Maps & Location Services</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="check-icon">✓</div>
-                        <span>AI-Powered Safety Recommendations</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="check-icon">✓</div>
-                        <span>Real-time Safety Data & SDS Management</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="built-with">
-                <div class="bolt-badge">
-                    ⚡ Built with Bolt.new
-                </div>
-                <a href="https://github.com/HeyBatlle1/safety-companion.com" class="github-link">
-                    View on GitHub →
-                </a>
-            </div>
-        </div>
-
-        <div class="right-section">
-            <div class="glow"></div>
-            <div class="visual-element">
-                <div class="grid-pattern"></div>
-                <div class="tower"></div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
-
+<svg width="1280" height="640" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a"/>
+      <stop offset="50%" style="stop-color:#1e40af"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    
+    <!-- Logo gradient -->
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa"/>
+      <stop offset="100%" style="stop-color:#93c5fd"/>
+    </linearGradient>
+    
+    <!-- Tower gradient -->
+    <linearGradient id="towerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa" stop-opacity="0.3"/>
+      <stop offset="100%" style="stop-color:#93c5fd" stop-opacity="0.3"/>
+    </linearGradient>
+    
+    <!-- Bolt gradient -->
+    <linearGradient id="boltGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+    
+    <!-- Grid pattern -->
+    <pattern id="gridPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+    
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bgGradient)"/>
+  
+  <!-- Right section background -->
+  <rect x="640" y="0" width="640" height="640" fill="rgba(255,255,255,0.05)"/>
+  
+  <!-- Grid pattern on right -->
+  <rect x="640" y="0" width="640" height="640" fill="url(#gridPattern)"/>
+  
+  <!-- Logo triangle -->
+  <polygon points="100,140 120,180 80,180" fill="url(#logoGradient)"/>
+  
+  <!-- Main title -->
+  <text x="60" y="230" font-family="Inter, sans-serif" font-size="48" font-weight="700" fill="#60a5fa">Safety Companion</text>
+  
+  <!-- Subtitle -->
+  <text x="60" y="255" font-family="Inter, sans-serif" font-size="18" font-weight="400" fill="#94a3b8">Modern Safety Management Platform</text>
+  
+  <!-- Description -->
+  <text x="60" y="305" font-family="Inter, sans-serif" font-size="20" font-weight="400" fill="#e2e8f0">
+    <tspan x="60" dy="0">A comprehensive web application designed to provide</tspan>
+    <tspan x="60" dy="25">OSHA-compliant safety assistance, real-time monitoring,</tspan>
+    <tspan x="60" dy="25">and location-based services to keep workers safe.</tspan>
+  </text>
+  
+  <!-- Tech Stack title -->
+  <text x="60" y="410" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#cbd5e1" text-transform="uppercase" letter-spacing="1px">TECH STACK</text>
+  
+  <!-- Tech stack badges -->
+  <g>
+    <!-- Row 1 -->
+    <rect x="60" y="430" width="80" height="28" rx="14" fill="rgba(96,165,250,0.2)" stroke="rgba(96,165,250,0.3)"/>
+    <text x="100" y="448" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#bfdbfe" text-anchor="middle">React 18</text>
+    
+    <rect x="150" y="430" width="90" height="28" rx="14" fill="rgba(96,165,250,0.2)" stroke="rgba(96,165,250,0.3)"/>
+    <text x="195" y="448" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#bfdbfe" text-anchor="middle">TypeScript</text>
+    
+    <rect x="250" y="430" width="60" height="28" rx="14" fill="rgba(96,165,250,0.2)" stroke="rgba(96,165,250,0.3)"/>
+    <text x="280" y="448" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#bfdbfe" text-anchor="middle">Vite</text>
+    
+    <rect x="320" y="430" width="100" height="28" rx="14" fill="rgba(96,165,250,0.2)" stroke="rgba(96,165,250,0.3)"/>
+    <text x="370" y="448" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#bfdbfe" text-anchor="middle">Tailwind CSS</text>
+    
+    <!-- Row 2 -->
+    <rect x="60" y="468" width="80" height="28" rx="14" fill="rgba(96,165,250,0.2)" stroke="rgba(96,165,250,0.3)"/>
+    <text x="100" y="486" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#bfdbfe" text-anchor="middle">Firebase</text>
+    
+    <rect x="150" y="468" width="100" height="28" rx="14" fill="rgba(96,165,250,0.2)" stroke="rgba(96,165,250,0.3)"/>
+    <text x="200" y="486" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#bfdbfe" text-anchor="middle">Google Maps</text>
+    
+    <rect x="260" y="468" width="110" height="28" rx="14" fill="rgba(96,165,250,0.2)" stroke="rgba(96,165,250,0.3)"/>
+    <text x="315" y="486" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#bfdbfe" text-anchor="middle">AI Integration</text>
+    
+    <rect x="380" y="468" width="110" height="28" rx="14" fill="rgba(96,165,250,0.2)" stroke="rgba(96,165,250,0.3)"/>
+    <text x="435" y="486" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#bfdbfe" text-anchor="middle">Framer Motion</text>
+  </g>
+  
+  <!-- Features -->
+  <g>
+    <!-- Feature 1 -->
+    <circle cx="70" cy="530" r="8" fill="#10b981"/>
+    <text x="68" y="535" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="white" text-anchor="middle">✓</text>
+    <text x="85" y="535" font-family="Inter, sans-serif" font-size="14" fill="#cbd5e1">OSHA Compliance &amp; Safety Guidelines</text>
+    
+    <!-- Feature 2 -->
+    <circle cx="70" cy="555" r="8" fill="#10b981"/>
+    <text x="68" y="560" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="white" text-anchor="middle">✓</text>
+    <text x="85" y="560" font-family="Inter, sans-serif" font-size="14" fill="#cbd5e1">Interactive Maps &amp; Location Services</text>
+    
+    <!-- Feature 3 -->
+    <circle cx="70" cy="580" r="8" fill="#10b981"/>
+    <text x="68" y="585" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="white" text-anchor="middle">✓</text>
+    <text x="85" y="585" font-family="Inter, sans-serif" font-size="14" fill="#cbd5e1">AI-Powered Safety Recommendations</text>
+    
+    <!-- Feature 4 -->
+    <circle cx="340" cy="530" r="8" fill="#10b981"/>
+    <text x="338" y="535" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="white" text-anchor="middle">✓</text>
+    <text x="355" y="535" font-family="Inter, sans-serif" font-size="14" fill="#cbd5e1">Real-time Safety Data &amp; SDS Management</text>
+  </g>
+  
+  <!-- Built with Bolt.new badge -->
+  <rect x="60" y="610" width="140" height="28" rx="14" fill="url(#boltGradient)"/>
+  <text x="75" y="628" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="white">⚡ Built with Bolt.new</text>
+  
+  <!-- GitHub link -->
+  <text x="220" y="628" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#94a3b8">View on GitHub →</text>
+  
+  <!-- Tower visualization -->
+  <g transform="translate(960, 120)">
+    <!-- Glow effect -->
+    <ellipse cx="0" cy="400" rx="150" ry="80" fill="rgba(96,165,250,0.1)"/>
+    
+    <!-- Tower -->
+    <polygon points="0,50 -50,400 50,400" fill="url(#towerGradient)" stroke="#60a5fa" stroke-width="2" opacity="0.8" filter="url(#glow)"/>
+    
+    <!-- Grid overlay on tower -->
+    <g clip-path="polygon(0 50, -50 400, 50 400)">
+      <g opacity="0.3">
+        <!-- Vertical lines -->
+        <line x1="-40" y1="50" x2="-32" y2="400" stroke="#60a5fa" stroke-width="0.5"/>
+        <line x1="-20" y1="50" x2="-16" y2="400" stroke="#60a5fa" stroke-width="0.5"/>
+        <line x1="0" y1="50" x2="0" y2="400" stroke="#60a5fa" stroke-width="1"/>
+        <line x1="20" y1="50" x2="16" y2="400" stroke="#60a5fa" stroke-width="0.5"/>
+        <line x1="40" y1="50" x2="32" y2="400" stroke="#60a5fa" stroke-width="0.5"/>
+        
+        <!-- Horizontal lines -->
+        <line x1="-45" y1="100" x2="45" y2="100" stroke="#60a5fa" stroke-width="0.5"/>
+        <line x1="-40" y1="150" x2="40" y2="150" stroke="#60a5fa" stroke-width="0.5"/>
+        <line x1="-35" y1="200" x2="35" y2="200" stroke="#60a5fa" stroke-width="0.5"/>
+        <line x1="-30" y1="250" x2="30" y2="250" stroke="#60a5fa" stroke-width="0.5"/>
+        <line x1="-25" y1="300" x2="25" y2="300" stroke="#60a5fa" stroke-width="0.5"/>
+        <line x1="-20" y1="350" x2="20" y2="350" stroke="#60a5fa" stroke-width="0.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

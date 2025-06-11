@@ -20,7 +20,7 @@ A comprehensive web application designed to provide OSHA-compliant safety assist
 ---
 
 ### **Features**
-
+__/Proptrietary safety Algorithim for a complete 360*safety assessment Ran in ann agentic set up with Gemini 2.0 Flash&Grok3 beta
 - ✓ OSHA Compliance & Safety Guidelines
 - ✓ Interactive Maps & Location Services
 - ✓ AI-Powered Safety Recommendations
